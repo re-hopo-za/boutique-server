@@ -59,7 +59,6 @@ class OptionResource extends Resource
                         Forms\Components\MultiSelect::make('categories')
                             ->relationship( 'categories' ,'slug' )
                             ->label('دسته بندی')
-                            ->required()
                             ->columns(2),
                     ])->columns(2),
                     TinyEditor::make('value')
