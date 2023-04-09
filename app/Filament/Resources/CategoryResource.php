@@ -73,18 +73,6 @@ class CategoryResource extends Resource
                     ])->columnSpan(9 ),
                     Grid::make()->schema([
                         Card::make()->schema([
-                            Forms\Components\Select::make('model')
-                                ->label('Post Type')
-                                ->options(
-                                    [
-                                        'blog'    => 'Blog',
-                                        'product' => 'Product',
-                                        'work'    => 'Works',
-                                        'faq'     => 'Faqs',
-                                        'portfolio' => 'Portfolio',
-                                    ]
-                                )
-                                ->required(),
                             Forms\Components\Select::make('parent_id')
                                 ->label('Parent ID')
                                 ->searchable()
