@@ -1,0 +1,24 @@
+type Query{
+    options: [Option!]! @all
+    option(key: String! @eq): Option @first
+    meta:[Meta!]
+}
+
+
+
+
+type Option{
+    id:ID
+    key: String
+    title:String
+    meta:[Meta!] @morphMany
+    media: String! @method(name: "attachment")
+}
+
+
+type Meta{
+    key: String!
+    value:String!
+}
+
+
