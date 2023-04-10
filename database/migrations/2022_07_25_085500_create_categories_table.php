@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('parent_id');
             $table->mediumText('description')->nullable();
             $table->string('cover')->nullable();
-            $table->string('model');
             $table->timestamps();
         });
     }

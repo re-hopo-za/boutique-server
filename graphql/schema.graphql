@@ -1,7 +1,7 @@
 type Query{
     options: [Option!]! @all
-    option(key: String! @eq): Option @first
-    meta:[Meta!]
+    optionByID(key: String! @eq): [Option!]! @all
+    optionByCategory(category: String! @builder (method: "App\\Models\\Option@getByCategory")): [Option!]! @all
 }
 
 
@@ -21,4 +21,10 @@ type Meta{
     value:String!
 }
 
+type Category{
+    title: String!
+    slug: String!
+    description: String!
+    cover: String!
+}
 

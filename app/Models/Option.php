@@ -41,6 +41,12 @@ class Option extends Model implements HasMedia
     }
 
 
+    public function getByCategory($query ,$category )
+    {
+        return $query->whereHas('categories' ,function( $query ) use($category){
+            $query->where('slug', $category );
+        });
+    }
 
 
     public function meta(): MorphMany
